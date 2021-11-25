@@ -8,4 +8,5 @@ class Artist < ApplicationRecord
     validates :popularity, presence: true
     validates :spotify_url, presence: true
     validates :spotify_id, presence: true
+
 end

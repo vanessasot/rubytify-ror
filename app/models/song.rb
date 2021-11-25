@@ -8,4 +8,5 @@ class Song < ApplicationRecord
   validates :duration_ms, presence: true
   validates :explicit, inclusion: { in: [true, false] }
   validates :spotify_id, presence: true
+
 end
