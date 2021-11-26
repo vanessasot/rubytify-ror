@@ -17,7 +17,7 @@ def import_api_data
     begin
       create_api_data(artist)
     rescue RestClient::TooManyRequests => e
-      sleep(0.5)
+      sleep(0.3)
     end
   end
 end

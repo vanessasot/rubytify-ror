@@ -26,3 +26,4 @@ production:
   database: rubytify-ror_production
   username:
   password:
+  url: postgres://mzjxywyjjsvtyq:eab574849c0012e6928171b6ac2f1a3e176dfc399ea7fad58deab35da5cf5de2@ec2-50-16-241-192.compute-1.amazonaws.com:5432/dfuke5qpefsd9j
