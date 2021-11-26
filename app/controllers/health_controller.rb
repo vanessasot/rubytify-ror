@@ -1,0 +1,3 @@
+class HealthController < ApplicationController
+  
+end
