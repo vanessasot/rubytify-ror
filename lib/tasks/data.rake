@@ -13,11 +13,12 @@ end
 def import_api_data
   artists = YAML.load_file(Rails.root.join('db/seeds/artists_list.yml')).values.flatten
   artists.each do |name_artist|
+    sleep(0.3)
     artist = RSpotify::Artist.search(name_artist.to_s).first
     begin
       create_api_data(artist)
-    rescue RestClient::TooManyRequests => e
-      sleep(0.3)
+    #rescue RestClient::TooManyRequests => e
+      #sleep(0.3)
     end
   end
 end
