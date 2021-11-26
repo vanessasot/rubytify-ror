@@ -8,7 +8,7 @@ API that brings data through endpoints that consume the Spotify API
 - Rails 5.2.3
 - Postgresql
 
-##Endpoints
+## Endpoints
 
 - The endpoint `/api/v1/artists` return all artists ordered by their popularity. with the following fields:
 
@@ -38,10 +38,10 @@ API that brings data through endpoints that consume the Spotify API
 
 - The endpoint `/api/v1/genres/:genre_name/random_song` should return a random song that matches the specified genre. The response contain the following fields:
 
-`- name`
-`- spotify_url`
-`- preview_url`
-`- duration_ms`
-`- explicit`
+`- name
+- spotify_url
+- preview_url
+- duration_ms
+- explicit`
 
 #### You can see the deployment of the API in Heroku in the [App](https://rubytify-ror-test.herokuapp.com/api/v1/artists)
