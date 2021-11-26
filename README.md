@@ -21,21 +21,22 @@ API that brings data through endpoints that consume the Spotify API
 ```
 
 - The endpoint `/api/v1/artists/:id/albums` return all albums for an artist with the following fields:
-
-`- id`
-`- name`
-`- image`
-`- spotify_url`
-`- total_tracks`
-
+```
+- id
+- name
+- image
+- spotify_url
+- total_tracks
+```
 
 - The endpoint `/api/v1/albums/:id/songs` return all songs for an album with the following fields:
-
-`- name`
-`- spotify_url`
-`- preview_url`
-`- duration_ms`
-`- explicit`
+```
+- name
+- spotify_url
+- preview_url
+- duration_ms
+- explicit
+```
 
 - The endpoint `/api/v1/genres/:genre_name/random_song` should return a random song that matches the specified genre. The response contain the following fields:
 
