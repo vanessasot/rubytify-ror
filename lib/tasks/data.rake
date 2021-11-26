@@ -13,12 +13,12 @@ end
 def import_api_data
   artists = YAML.load_file(Rails.root.join('db/seeds/artists_list.yml')).values.flatten
   artists.each do |name_artist|
-    sleep(0.3)
+    sleep(0.5)
     artist = RSpotify::Artist.search(name_artist.to_s).first
     begin
       create_api_data(artist)
-    #rescue RestClient::TooManyRequests => e
-      #sleep(0.3)
+    rescue RestClient::TooManyRequests => e
+      sleep(0.5)
     end
   end
 end
@@ -32,6 +32,7 @@ def create_api_data(artist)
                           spotify_id: artist.id)
   if new_artist.save
     artist.albums.each do |album|
+      sleep(0.5)
       new_album = Album.new(name: album.name,
                             image: album.images.empty? ? 'no_image' : album.images.first["url"],
                             spotify_url: album.external_urls["spotify"],
@@ -40,6 +41,7 @@ def create_api_data(artist)
                             artist_id: new_artist.id)
       if new_album.save
         album.tracks.each do |song|
+          sleep(0.5)
           new_song = Song.new(name: song.name,
                               spotify_url: song.external_urls["spotify"],
                               preview_url: song.preview_url,
